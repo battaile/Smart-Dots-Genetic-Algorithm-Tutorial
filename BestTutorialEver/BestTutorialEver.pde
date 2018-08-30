@@ -1,5 +1,5 @@
 Population test;
-PVector goal  = new PVector(400, 10);
+PVector goal  = new PVector(100, 10);
 
 
 void setup() {
@@ -19,7 +19,9 @@ void draw() {
   //draw obstacle(s)
   fill(0, 0, 255);
 
-  rect(0, 300, 600, 10);
+  rect(0, 400, 600, 10);
+  
+  rect(100, 100, 800, 10);
 
 
   if (test.allDotsDead()) {
