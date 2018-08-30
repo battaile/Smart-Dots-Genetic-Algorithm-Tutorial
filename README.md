@@ -1,4 +1,4 @@
 # Smart-Dots-Genetic-Algorithm-Tutorial
-Here is the code for my genetic algorithm tutorial 
+added a second wall with opposing gap to genetic algorithm tutorial 
 
 ![screenshot](https://i.imgur.com/3INdPqa.png)
