@@ -64,6 +64,8 @@ class Dot {
         dead = true;
       } else if (pos.x< 810 && pos.y < 110 && pos.x > 100 && pos.y > 100) {//if hit obstacle
         dead = true;
+      } else if (pos.x< 810 && pos.y < 610 && pos.x > 100 && pos.y > 600) {//if hit obstacle
+        dead = true;
       } 
     }
   }
@@ -74,8 +76,12 @@ class Dot {
   void calculateFitness() {
     if (reachedGoal) {//if the dot reached the goal then the fitness is based on the amount of steps it took to get there
       fitness = 1.0/16.0 + 10000.0/(float)(brain.step * brain.step);
-    } else {//if the dot didn't reach the goal then the fitness is based on how close it is to the goal
-      float distanceToGoal = dist(pos.x, pos.y, goal.x, goal.y);
+    } else if (pos.y < 511 && pos.y > 390)  {//if the dot didn't reach the goal then the fitness is based on how close it is to the goal
+      float distanceToGoal = dist(pos.x, 2 * pos.y, 700, 2 * goal.y);
+      fitness = 1.0/(distanceToGoal * distanceToGoal);
+    } 
+      else {
+      float distanceToGoal = dist(pos.x, 2 * pos.y, goal.x, 2 * goal.y);
       fitness = 1.0/(distanceToGoal * distanceToGoal);
     }
   }
